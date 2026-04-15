@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Meet Loading Clone</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Google Sans', Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.loading-container {
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+}
+
+.meet-logo {
+    margin-bottom: 30px;
+}
+
+.meet-logo h1 {
+    color: #5f6368;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Container da barra (cinza claro) */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: #e8eaed;
+    border-radius: 2px;
+    overflow: hidden; /* Garante que a barra não saia das bordas */
+    position: relative;
+}
+
+/* A barra colorida que se move */
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* Gradiente com as cores do Google */
+    background: linear-gradient(to right, 
+        #4285F4 25%, 
+        #EA4335 25%, #EA4335 50%, 
+        #FBBC05 50%, #FBBC05 75%, 
+        #34A853 75%);
+    background-size: 400% 100%;
+    animation: google-loading 2s linear infinite;
+}
+
+/* Animação de movimento infinito */
+@keyframes google-loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="loading-container">
+        <div class="meet-logo">
+            <svg width="80" height="80" viewBox="0 0 24 24">
+                <path fill="#00897b" d="M12.5 14.5L17 19V5l-4.5 4.5V5c0-1.1-.9-2-2-2h-8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-4.5z"/>
+                <path fill="#00acc1" d="M12.5 14.5L17 19V5l-4.5 4.5V5c0-1.1-.9-2-2-2h-8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-4.5z" opacity=".3"/>
+                <path fill="#4285F4" d="M21 6.5l-4 4V7c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.5l4 4v-11z"/>
+            </svg>
+            <h1>Google Meet</h1>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+</body>
+</html>
